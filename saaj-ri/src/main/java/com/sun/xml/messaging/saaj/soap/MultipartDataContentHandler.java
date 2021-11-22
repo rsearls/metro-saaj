@@ -23,9 +23,9 @@ public class MultipartDataContentHandler implements DataContentHandler {
 	    "Multipart");
 
     /**
-     * Return the DataFlavors for this <code>DataContentHandler</code>.
+     * Return the ActivationDataFlavor for this <code>DataContentHandler</code>.
      *
-     * @return The DataFlavors
+     * @return The ActivationDataFlavor
      */
     @Override
     public ActivationDataFlavor[] getTransferDataFlavors() { // throws Exception;

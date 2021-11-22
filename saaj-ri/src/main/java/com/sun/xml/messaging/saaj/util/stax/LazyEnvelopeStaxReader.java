@@ -13,6 +13,10 @@ package com.sun.xml.messaging.saaj.util.stax;
 import com.sun.xml.messaging.saaj.soap.LazyEnvelope;
 import javax.xml.namespace.NamespaceContext;
 import javax.xml.namespace.QName;
+
+import org.w3c.dom.Node;
+
+import com.sun.xml.messaging.saaj.soap.impl.BodyImpl;
 import jakarta.xml.soap.SOAPException;
 import javax.xml.stream.Location;
 import javax.xml.stream.XMLStreamException;
@@ -362,5 +366,24 @@ public class LazyEnvelopeStaxReader extends org.jvnet.staxex.util.DOMStreamReade
         if (usePayloadReaderDelegate) return payloadReader.getPIData();
         return super.getPIData();
     }
-    
+
+    //make sure that message is not realized as a result of call
+    //to getFirstChild
+    protected Node getFirstChild(Node node) {
+        if (node instanceof BodyImpl) {
+            return ((BodyImpl) node).getFirstChildNoMaterialize();
+        } else {
+            return node.getFirstChild();
+        }
+    }
+
+    protected Node getNextSibling(Node node) {
+        if (node instanceof BodyImpl) {
+            //body is not expected to have a next sibling - even if it does
+            //we would have to materialize the node to retrieve it.
+            //Since we don't want to materialize it right now, just return null
+            return null;
+        }
+        return node.getNextSibling();
+    }
 }

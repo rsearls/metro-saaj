@@ -10,7 +10,6 @@
 
 package com.sun.xml.messaging.saaj.soap;
 
-import java.awt.datatransfer.DataFlavor;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.InputStream;
@@ -45,8 +44,8 @@ public class FastInfosetDataContentHandler implements DataContentHandler {
     }
 
     /**
-     * Return the Transfer Data of type DataFlavor from InputStream
-     * @param flavor The DataFlavor.
+     * Return the Transfer Data of type ActivationDataFlavor from InputStream
+     * @param flavor The ActivationDataFlavor.
      * @param dataSource DataSource.
      * @return The constructed Object.
      * @exception IOException in case of an I/O error

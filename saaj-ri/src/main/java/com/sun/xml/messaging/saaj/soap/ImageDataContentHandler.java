@@ -11,7 +11,6 @@
 package com.sun.xml.messaging.saaj.soap;
 
 import java.awt.*;
-import java.awt.datatransfer.DataFlavor;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Arrays;
@@ -45,7 +44,7 @@ public class ImageDataContentHandler extends Component
     }
 
     /**
-     * Returns an array of DataFlavor objects indicating the flavors the
+     * Returns an array of ActivationDataFlavor objects indicating the flavors the
      * data can be provided in. The array should be ordered according to
      * preference for providing the data (from most richly descriptive to
      * least descriptive).
@@ -62,7 +61,7 @@ public class ImageDataContentHandler extends Component
      * The class of the object returned is defined by the representation class
      * of the flavor.
      *
-     * @param df The DataFlavor representing the requested type.
+     * @param df The ActivationDataFlavor representing the requested type.
      * @param ds The DataSource representing the data to be converted.
      * @return The constructed Object.
      */
@@ -79,7 +78,7 @@ public class ImageDataContentHandler extends Component
 
     /**
      * Return an object representing the data in its most preferred form.
-     * Generally this will be the form described by the first DataFlavor
+     * Generally this will be the form described by the first ActivationDataFlavor
      * returned by the <code>getTransferDataFlavors</code> method.
      *
      * @param ds The DataSource representing the data to be converted.

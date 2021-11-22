@@ -10,7 +10,6 @@
 
 package com.sun.xml.messaging.saaj.soap;
 
-import java.awt.datatransfer.DataFlavor;
 import java.io.*;
 import java.awt.*;
 
@@ -43,9 +42,9 @@ public class GifDataContentHandler extends Component implements DataContentHandl
     }
 
     /**
-     * Return the Transfer Data of type DataFlavor from InputStream.
+     * Return the Transfer Data of type ActivationDataFlavor from InputStream.
      *
-     * @param df The DataFlavor
+     * @param df The ActivationDataFlavor
      * @param ds The DataSource
      * @return String object
      * @exception IOException in case of an I/O error

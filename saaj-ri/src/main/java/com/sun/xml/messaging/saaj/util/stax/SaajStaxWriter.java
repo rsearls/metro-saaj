@@ -490,7 +490,7 @@ public class SaajStaxWriter implements XMLStreamWriter {
                     }
                     // add namespace declarations
                     for (NamespaceDeclaration namespace : this.namespaceDeclarations) {
-                        newElement.addNamespaceDeclaration(namespace.prefix, namespace.namespaceUri);
+                        target.addNamespaceDeclaration(namespace.prefix, namespace.namespaceUri);
                     }
                     // add attribute declarations
                     for (AttributeDeclaration attribute : this.attributeDeclarations) {

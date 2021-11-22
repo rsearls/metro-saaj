@@ -10,7 +10,6 @@
 
 package com.sun.xml.messaging.saaj.soap;
 
-import java.awt.datatransfer.DataFlavor;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -38,8 +37,8 @@ public class XmlDataContentHandler implements DataContentHandler {
     }
 
     /**
-     * return the DataFlavors for this <code>DataContentHandler</code>
-     * @return The DataFlavors.
+     * return the ActivationDataFlavor for this <code>DataContentHandler</code>
+     * @return The ActivationDataFlavor.
      */
     @Override
     public ActivationDataFlavor[] getTransferDataFlavors() { // throws Exception;

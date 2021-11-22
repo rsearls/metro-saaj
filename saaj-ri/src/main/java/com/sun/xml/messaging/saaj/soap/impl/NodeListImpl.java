@@ -30,8 +30,10 @@ public class NodeListImpl implements NodeList {
     private final NodeList nodeList;
 
     public NodeListImpl(SOAPDocumentImpl soapDocument, NodeList nodeList) {
-        this.soapDocument = requireNonNull(soapDocument);
-        this.nodeList = requireNonNull(nodeList);
+        Objects.requireNonNull(soapDocument);
+        Objects.requireNonNull(nodeList);
+        this.soapDocument = soapDocument;
+        this.nodeList = nodeList;
     }
 
     @Override

@@ -466,7 +466,7 @@ import java.io.Serializable;
         tempString = path.substring(0, path.indexOf("/../"));
         segIndex = tempString.lastIndexOf('/');
         if (segIndex != -1) {
-          if (!tempString.substring(segIndex++).equals("src/main")) {
+          if (!tempString.substring(segIndex++).equals("..")) {
             path = path.substring(0, segIndex).concat(path.substring(index+4));
           }
           else
@@ -478,7 +478,7 @@ import java.io.Serializable;
 
       // 6f - remove ending "<segment>/.." where "<segment>" is a
       // complete path segment
-      if (path.endsWith("/src/main")) {
+      if (path.endsWith("/..")) {
         tempString = path.substring(0, path.length()-3);
         segIndex = tempString.lastIndexOf('/');
         if (segIndex != -1) {
